@@ -1,0 +1,127 @@
+:root {
+  --primary-color: rgb(236, 236, 236);
+  --secondary-color: rgb(21, 21, 21);
+  --blue-color: #2bc5cd;
+  --orange-color: #ff693d;
+  --border: 2px solid var(--blue-color);
+  --spacing: 28px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Diseño dinámico de columnas */
+  grid-template-rows: minmax(300px, auto); /* Filas dinámicas */
+  gap: var(--spacing); /* Espaciado entre los elementos */
+  max-width: 1200px; /* Ancho máximo */
+  margin: 0 auto; /* Centrar el grid */
+  padding: var(--spacing);
+}
+
+header {
+  background-color: var(--blue-color);
+  color: var(--primary-color);
+  grid-row: span 2; /* El header ocupará dos filas */
+  grid-column: span 1; /* Por defecto, ocupa 1 columna */
+  text-align: center;
+  padding: var(--spacing);
+  display: grid; /* Utiliza grid para el contenido interno */
+  place-content: center; /* Centra el contenido del header */
+}
+
+h1 {
+  font-size: 2rem; /* Tamaño del texto */
+}
+
+p {
+  font-size: 1.1rem;
+}
+
+.school, .student, .time, .alumni {
+  background-size: cover;
+  background-position: center;
+  height: 300px; /* Altura consistente para las secciones */
+}
+
+.school {
+  background-image: url(https://images03.nicepage.com/c461c07a441a5d220e8feb1a/d8ce469044b958508f4bdbab/blueschoolbackpackwithessentialsupplies_232148207678.jpg);
+}
+
+.student {
+  background-image: url(https://images03.nicepage.com/c461c07a441a5d220e8feb1a/9e4ce16148dd5cbeb1065410/89f80abe-6acd-d8dc-a341-3e571206975b.jpg);
+}
+
+.time {
+  background-image: url(https://images03.nicepage.com/c461c07a441a5d220e8feb1a/773a5aa425b1502aaac14708/f2b45624-c8f6-3aa0-0ee4-58adda3c89b0.jpg);
+}
+
+.alumni {
+  background-image: url(https://images03.nicepage.com/c461c07a441a5d220e8feb1a/89993ff69c3e5244ad2bf1ba/blondestudentgirlissmilingholdingfoldernotebookherhandsuniversitybackground_101969664.jpg);
+}
+
+main {
+  border: var(--border);
+  color: var(--blue-color);
+  text-align: center;
+  height: 300px;
+}
+
+footer {
+  background-color: var(--orange-color);
+  color: var(--primary-color);
+  grid-column: span 2; /* Ocupa 2 columnas en pantallas grandes */
+  text-align: center;
+  padding: 20px;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-top: 50px;
+}
+
+h3 {
+  font-size: 1.3rem;
+}
+
+.button {
+  padding: 10px 20px;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: var(--blue-color);
+  opacity: 0.9;
+}
+
+footer p {
+  font-size: 1rem;
+}
+
+/* Estilo para las secciones con imágenes */
+.school, .student, .time, .alumni {
+  background-size: cover;
+  background-position: center;
+  height: 300px; /* Altura consistente */
+}
+
+/* Ajuste para las secciones dentro del footer */
+footer h3, footer p {
+  margin-bottom: 20px;
+}
+
+/* Asegurando que las columnas no se solapen ni se oculten */
+@media (max-width: 768px) {
+  body {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Ajuste de las columnas en pantallas pequeñas */
+  }
+
+  header {
+    grid-row: span 2; /* Siempre ocupa dos filas */
+  }
+
+  footer {
+    grid-column: span 1; /* El footer ocupa solo una columna en pantallas más pequeñas */
+  }
+}
